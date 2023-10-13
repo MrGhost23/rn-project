@@ -14,6 +14,11 @@ export default function App() {
     setGoals((currentGoals) => [...currentGoals, enteredGoal]);
   };
 
+  const removeGoal = (goalToRemove) => {
+    const updatedGoals = goals.filter((goal) => goal !== goalToRemove);
+    setGoals(updatedGoals);
+  };
+
   return (
     <View style={styles.appContainer}>
       <View style={styles.inputContainer}>
@@ -27,7 +32,9 @@ export default function App() {
       <View style={styles.goalsContainer}>
         {goals.map((goal) => (
           <View key={goal} style={styles.goalItem}>
-            <Text style={styles.goalText}>{goal}</Text>
+            <Text style={styles.goalText} onPress={() => removeGoal(goal)}>
+              {goal}
+            </Text>
           </View>
         ))}
       </View>
