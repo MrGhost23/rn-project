@@ -26,6 +26,9 @@ export default function App() {
       </View>
       <View style={styles.goalsContainer}>
         <Text>Your List</Text>
+        {goals.map((goal) => (
+          <Text key={goal}>{goal}</Text>
+        ))}
       </View>
     </View>
   );
@@ -34,7 +37,7 @@ export default function App() {
 const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
-    paddingTop: 50,
+    paddingTop: 20,
     padding: 16,
   },
   inputContainer: {
@@ -42,7 +45,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingBottom: 24,
     borderBottomWidth: 1,
     borderBottomColor: "#cccccc",
   },
@@ -54,6 +56,7 @@ const styles = StyleSheet.create({
     padding: 8,
   },
   goalsContainer: {
-    flex: 5,
+    marginTop: 20,
+    flex: 6,
   },
 });
