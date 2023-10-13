@@ -63,7 +63,7 @@ export default function App() {
 const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
-    paddingTop: 20,
+    paddingTop: 40,
     padding: 16,
   },
   inputContainer: {
